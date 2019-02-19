@@ -2,7 +2,8 @@
   <div class="hello">
     <h5>{{msg}}</h5>
     <el-button type="success">跳转</el-button>
-    <router-link to="index">跳转</router-link>
+    <router-link to="index">跳转index</router-link>
+    <router-link to="test">跳转Test</router-link>
   </div>
 </template>
 
