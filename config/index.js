@@ -24,7 +24,15 @@ module.exports = {
         secure:true,
         changeOrigin:true,
         pathRewrite: {
-          '^/dl': '' 
+          '^/dl': ''
+        }
+      },
+      '/m':{
+        target:'https://kfmobi.huigoufang.com/api',
+        secure:true,
+        changeOrigin:true,
+        pathRewrite: {
+          '^/m': ''
         }
       }
     },//解决跨域
@@ -88,6 +96,6 @@ module.exports = {
     // View the bundle analyzer report after build finishes:
     // `npm run build --report`
     // Set to `true` or `false` to always turn it on or off
-    bundleAnalyzerReport: process.env.npm_config_report //打包文件优化工具 
+    bundleAnalyzerReport: process.env.npm_config_report //打包文件优化工具
   }
 }

@@ -16,13 +16,60 @@ export default {
   computed: {},
   watch: {},
   methods: {
-
+    getHost () {
+      console.log(window.location.host)
+      this.$ajax.get('/m/cgi-m/sowingMap/list', {
+        headers: {
+          citysite: 'bj',
+          token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wva2Ztb2JpLmh1aWdvdWZhbmcuY29tIiwiYXVkIjoiaHR0cHM6XC9cL2tmbW9iaS5odWlnb3VmYW5nLmNvbSIsIm1vZCI6Ik0iLCJpYXQiOjE1NTA2MjU3MjIsImV4cCI6MTU1MDcxMjEyMiwiaWQiOiJna2xLIiwiYWNjb3VudCI6IjEzMjQ5MzkyMDAwIn0.pWD6HaducQNvUU3rAaRAhuQD3rmpM-5NQrvaQykKkcU'
+        }
+      }).then(res => {
+        console.log(res)
+      }).catch(err => {
+        console.log(err)
+      })
+    },
+    fetchGet () {
+      let myHeaders = new Headers({
+        citysite: 'bj',
+        token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wva2Ztb2JpLmh1aWdvdWZhbmcuY29tIiwiYXVkIjoiaHR0cHM6XC9cL2tmbW9iaS5odWlnb3VmYW5nLmNvbSIsIm1vZCI6Ik0iLCJpYXQiOjE1NTA2MjU3MjIsImV4cCI6MTU1MDcxMjEyMiwiaWQiOiJna2xLIiwiYWNjb3VudCI6IjEzMjQ5MzkyMDAwIn0.pWD6HaducQNvUU3rAaRAhuQD3rmpM-5NQrvaQykKkcU'
+      })
+      console.log(myHeaders)
+      fetch('https://kfmobi.huigoufang.com/api/cgi-m/sowingMap/list', {
+        method: 'GET',
+        mode: 'cors',
+        headers: myHeaders
+        // cache: 'default',
+        // credentials: 'include'
+      }).then(res => {
+        console.log(res)
+        return res.json()
+      }).then(data => {
+        console.log(data)
+      }).catch(error => {
+        console.error('Error', error)
+      })
+    },
+    fatchGetHttp () {
+      fetch('http://api.douban.com/v2/movie/top250?start=25&count=25', {
+        method: 'GET',
+        mode: 'cors'
+      }).then(res => {
+        return res.json()
+      }).then(data => {
+        console.log(data)
+      }).catch(err => {
+        console.log(err)
+      })
+    }
   },
   created () {
 
   },
   mounted () {
-
+    this.getHost()
+    this.fetchGet()
+    this.fatchGetHttp()
   },
   beforeCreate () {}, // 生命周期 - 创建之前
   beforeMount () {}, // 生命周期 - 挂载之前
