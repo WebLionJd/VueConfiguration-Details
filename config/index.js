@@ -4,13 +4,6 @@
 
 const path = require('path') //nodejs 文件路径插件
 module.exports = {
-  externals: {
-        'element-ui': 'ELEMENT',
-        vue:'Vue',
-        'vue-router':'VueRouter'
-      }
-};
-module.exports = {
   dev: { //dev环境
 
     // Paths
@@ -46,7 +39,7 @@ module.exports = {
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST //
     port: 8082, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-    autoOpenBrowser: true,//是否立即启用（使用默认浏览器）
+    autoOpenBrowser: false,//是否立即启用（使用默认浏览器）
     errorOverlay: true,//浏览器提示错误
     notifyOnErrors: true,//跨平台提示错误
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
@@ -82,11 +75,9 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, '../dist'),//webpack所有处理过的文件都在这个目录下.
     assetsSubDirectory: 'static',//webpack编译过后的资源文件都会放在static的目录下,每次编译前static文件会被清空。
     assetsPublicPath: '../dist/',//通过http服务器运行的url路径，大多数情况下是根目录(/),后台有要求加上./或者根据目录添加。（*在内部，这个是被webpack当做output.publicPath来处理的）。
-
     /**
      * Source Maps
      */
-
     productionSourceMap: true,//在构建生产环境版本时是否开启source map。
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',//方便检查bug,

@@ -156,5 +156,9 @@ if (config.build.bundleAnalyzerReport) { //可视化视图查看器 将捆绑内
   const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
 }
-
+webpackConfig.externals={ //配置不打包的文件
+    vue:'Vue',
+    'element-ui': 'ELEMENT',
+    // 'vue-router':'VueRouter'
+  }
 module.exports = webpackConfig
