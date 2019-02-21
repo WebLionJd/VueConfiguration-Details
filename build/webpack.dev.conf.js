@@ -9,7 +9,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')//用于copy文件和文
 const HtmlWebpackPlugin = require('html-webpack-plugin')//用于生成html文件的插件
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')//美化webpack的错误信息和日志的插件
 const portfinder = require('portfinder')//查看空闲端口位置，默认情况下搜索8000端口
-
 const HOST = process.env.HOST //process为node全局对象获取当前程序的环境变量(Host)。
 const PORT = process.env.PORT && Number(process.env.PORT)
 //开发环境完整的配置文件
@@ -39,7 +38,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     overlay: config.dev.errorOverlay //编译器错误或警告时在浏览器会全屏覆盖，默认是禁用，如果想显示错误和警告overlay:{ warnings: false, errors: true };
       ? { warnings: false, errors: true }
       : false,
-    publicPath: config.dev.assetsPublicPath,//指定webpack-dev-server的根目录，目录下面的文件可以通过浏览器直接访问。devServer.publicPath 和 output.publicPath 一样被推荐。 
+    publicPath: config.dev.assetsPublicPath,//指定webpack-dev-server的根目录，目录下面的文件可以通过浏览器直接访问。devServer.publicPath 和 output.publicPath 一样被推荐。
     proxy: config.dev.proxyTable,//设置请求代理解决跨域 https://webpack.docschina.org/configuration/dev-server/#devserver-proxy
     quiet: true, // necessary for FriendlyErrorsPlugin启用 quiet 后，除了初始启动信息之外的任何内容都不会被打印到控制台。这也意味着来自 webpack 的错误或警告在控制台不可见
     watchOptions: {//监视文件相关的控制选项

@@ -3,7 +3,13 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path') //nodejs 文件路径插件
-
+module.exports = {
+  externals: {
+        'element-ui': 'ELEMENT',
+        vue:'Vue',
+        'vue-router':'VueRouter'
+      }
+};
 module.exports = {
   dev: { //dev环境
 
@@ -99,3 +105,10 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report //打包文件优化工具
   }
 }
+// module.exports = {
+//   externals: {
+//     'element-ui': 'ELEMENT',
+//     Vue:'Vue',
+//     'vue-router':'VueRouter'
+//   }
+// }

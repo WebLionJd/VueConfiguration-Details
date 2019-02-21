@@ -2,12 +2,15 @@
 <template>
   <div class="index">
     <img src="../assets/fg2.jpg">
-    <img src="../../static/fg5.jpg">
+    <!-- <img src="../../static/fg5.jpg"> -->
+    <div class="indexdiv"></div>
     <button @click="back">返回</button>
+    <el-button>添加</el-button>
   </div>
 </template>
 
 <script>
+// import '../../static/css/index.css'
 export default {
   components: {
 
@@ -53,5 +56,9 @@ export default {
 </script>
 
 <style scoped>
-
+  .indexdiv{
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
+  }
 </style>
