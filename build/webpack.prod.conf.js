@@ -8,7 +8,7 @@ const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin') //用于压缩css文件
+const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin') //用于优化压缩css文件
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')//用于压缩js文件
 
 const env = process.env.NODE_ENV === 'testing'
@@ -156,9 +156,5 @@ if (config.build.bundleAnalyzerReport) { //可视化视图查看器 将捆绑内
   const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
 }
-webpackConfig.externals={ //配置不打包的文件
-    vue:'Vue',
-    'element-ui': 'ELEMENT',
-    // 'vue-router':'VueRouter'
-  }
+
 module.exports = webpackConfig

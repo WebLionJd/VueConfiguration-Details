@@ -97,9 +97,5 @@ module.exports = {
   }
 }
 // module.exports = {
-//   externals: {
-//     'element-ui': 'ELEMENT',
-//     Vue:'Vue',
-//     'vue-router':'VueRouter'
-//   }
+
 // }

@@ -42,11 +42,11 @@ module.exports = {
       '@': resolve('src'), // 可以在引入文件的时候使用@符号引入src文件夹中的文件
     }
   },
-  // externals: { //配置不打包的文件
-  //   vue:'Vue',
-  //   'element-ui': 'ELEMENT',
-  //   'vue-router':'VueRouter'
-  // },
+  externals: { //配置不打包的文件
+    vue:'Vue',
+    'element-ui': 'ELEMENT',
+    'vue-router':'VueRouter'
+  },
   module: {
     rules: [//每个对象对应针对具体类型的文件进行配置
       ...(config.dev.useEslint ? [createLintingRule()] : []),
