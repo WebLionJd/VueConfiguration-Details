@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import Element from 'element-ui'
 import axios from 'axios'
+import store from './store'
 // import '../static/css/reset.css'
 Vue.config.productionTip = false
 Vue.prototype.$ajax = axios
@@ -15,6 +16,12 @@ console.log(process.env, root)
 new Vue({
   el: '#app',
   router,
+  methods: {
+    afterLeave () {
+      this.$root.$emit('triggerScroll')
+    }
+  },
+  store,
   components: { App },
   template: '<App/>'
 })

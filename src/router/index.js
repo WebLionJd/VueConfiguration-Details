@@ -19,6 +19,16 @@ export default new Router({
       path: '/test',
       name: 'test',
       component: resolve => require(['@/views/test'], resolve)
+    },
+    {
+      path: '/parent/:id?',
+      name: 'test',
+      component: resolve => require(['@/views/partent'], resolve)
+    },
+    {
+      path: '/user-*',
+      name: 'user',
+      component: resolve => require(['@/views/user'], resolve)
     }
   ]
 })
