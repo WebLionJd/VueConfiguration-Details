@@ -22,13 +22,18 @@ export default new Router({
     },
     {
       path: '/parent/:id?',
-      name: 'test',
+      name: 'partent',
       component: resolve => require(['@/views/partent'], resolve)
     },
     {
       path: '/user-*',
       name: 'user',
       component: resolve => require(['@/views/user'], resolve)
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: resolve => require(['@/views/Home'], resolve)
     }
   ]
 })

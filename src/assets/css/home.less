@@ -1,0 +1,40 @@
+@color:#ededed;
+
+.aa{
+  color:red;
+  background-color: aqua;
+}
+.borderBox(@radius){
+  border-radius: @radius;
+  -moz-border-radius:@radius;
+  -webkit-border-radius:@radius;
+}
+.defaultClass(@w:100,@h:100,@border:1,@bgColor:#ffffff){
+  width: @w;
+  height:@h;
+  border: @border solid black;
+  background-color: @bgColor;
+}
+@front:"I am frond.";
+@var :'front';
+@color2:#a2a2a2;
+@color3:@color2+#111;
+.home{
+  // color:@color;
+  .aa;
+  .home-in{
+    .borderBox(25px);
+    background-color: @color;
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+  }
+  .home-out{
+    .defaultClass(100px,200px,5px);
+    &:after{
+      content:@var;
+      color:@color3;
+    }
+  }
+
+}

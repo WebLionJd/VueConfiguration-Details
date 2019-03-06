@@ -6,7 +6,7 @@ import router from './router'
 import Element from 'element-ui'
 import axios from 'axios'
 import store from './store'
-// import '../static/css/reset.css'
+import './assets/css/reset.css'
 Vue.config.productionTip = false
 Vue.prototype.$ajax = axios
 Vue.use(Element)

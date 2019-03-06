@@ -1,7 +1,7 @@
 
 <template>
   <div class="index">
-    <img src="../assets/fg2.jpg">
+    <img src="../assets/img/fg2.jpg">
     <!-- <img src="../../static/fg5.jpg"> -->
     <div class="indexdiv"></div>
     <button @click="back">返回</button>
